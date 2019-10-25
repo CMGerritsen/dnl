@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .topnav {
+            position: relative;
+            overflow: hidden;
+            background-color: #1D5EA7;
+            height: 53px;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            color: white;
+        }
+
+        .topnav-centered a {
+            float: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topnav-right {
+            float: right;
+            background-color: #1A5184;
+        }
+
+        /* Responsive navigation menu (for mobile devices) */
+        @media screen and (max-width: 600px) {
+            .topnav a, .topnav-right {
+                float: none;
+                display: block;
+                height: 55px;
+            }
+
+            .topnav-centered a {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+            }
+        }
+    </style>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+    <!-- Centered link -->
+    <div class="topnav-centered">
+        <a href="{{ path('default') }}"><img style="width: 40px" src="{{ asset('images/LOGO.png') }}"></a>
+    </div>
+
+    <!-- Left-aligned links (default) -->
+    <a style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold; font-size: 20px" href="{{ path('default') }}">Delfland Night Live</a>
+
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+        <a href="#search">HOME</a>
+        <a href="#about">NIEUWS</a>
+        <a href="#about">REGELS</a>
+        <a href="#about">CONTACT</a>
+    </div>
+
+</div>
+
+{% block body %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

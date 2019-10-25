@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ asset('images/Unknown.png') }}");
+            height: 75%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .hero-text button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 10px 25px;
+            color: black;
+            background-color: #ddd;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .hero-text button:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            margin-top: 40px;
+        }
+
+        .div1 {
+            grid-area: 1 / 3 / 2 / 4;
+            text-align: center;
+        }
+        .div2 { grid-area: 1 / 2 / 2 / 3; }
+        .div3 { grid-area: 1 / 4 / 2 / 5; }
+    </style>
+
+    <div class="hero-image">
+        <div class="hero-text">
+{#            <button>Reserveer nu!</button>#}
+        </div>
+    </div>
+
+    <div class="parent">
+        <div class="div1"><h1>OVER ONS</h1></div>
+        <div class="div2"><hr style="border: #f9eb5d 4px solid"></div>
+        <div class="div3"><hr style="border: #f9eb5d 4px solid"></div>
+    </div>
+{% endblock %}
