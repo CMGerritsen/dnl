@@ -54,6 +54,54 @@
                 transform: none;
             }
         }
+
+        .bottomnav {
+            position: relative;
+            overflow: hidden;
+            background-color: #1D5EA7;
+            height: 70px;
+        }
+
+        .bottomnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 17px;
+        }
+
+        .bottomnav a:hover {
+            color: white;
+        }
+
+        .bottomnav-centered a {
+            float: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bottomnav-right {
+            float: right;
+            background-color: #1A5184;
+        }
+
+        /* Responsive navigation menu (for mobile devices) */
+        @media screen and (max-width: 600px) {
+            .bottomnav-right a, .bottomnav-right {
+                float: none;
+                display: block;
+                height: 55px;
+            }
+
+            .bottomnav-centered a {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+            }
+        }
     </style>
     {% block stylesheets %}{% endblock %}
 </head>
@@ -72,15 +120,33 @@
 
     <!-- Right-aligned links -->
     <div class="topnav-right">
-        <a href="#search">HOME</a>
+        <a href="{{ path('default') }}">HOME</a>
         <a href="#about">NIEUWS</a>
         <a href="#about">REGELS</a>
-        <a href="#about">CONTACT</a>
+        <a href="#contact">CONTACT</a>
     </div>
-
 </div>
 
 {% block body %}{% endblock %}
+<!-- bottom navigation -->
+<div class="bottomnav">
+
+    <!-- Centered link -->
+    <div class="bottomnav-centered">
+
+    </div>
+
+    <!-- Left-aligned links (default) -->
+    <a style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold; font-size: 20px" href="{{ path('default') }}">Delfland Night Live</a>
+
+    <!-- Right-aligned links -->
+    <div class="bottomnav-right">
+        <a href="{{ path('default') }}"><img style="width: 100px;" src="{{ asset('images/Teamhexaneo.png') }}"></a>
+        <a href="{{ path('default') }}"><img style="width: 40px;" src="{{ asset('images/LOGO.png') }}"></a>
+        <a href="{{ path('default') }}"><img style="width: 100px;" src="{{ asset('images/Eventbrite.png') }}"></a>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

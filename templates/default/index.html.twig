@@ -44,32 +44,195 @@
             color: white;
         }
 
+        #overons {
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+        }
+
+        #overons h1 {
+            width: 100%;
+            border-bottom: 4px solid #f9eb5d;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+            font-weight: bold;
+        }
+
+        h1 span {
+            background: #fff;
+            padding: 0 10px;
+        }
+
         .parent {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
             grid-column-gap: 0px;
             grid-row-gap: 0px;
-            margin-top: 40px;
         }
 
         .div1 {
-            grid-area: 1 / 3 / 2 / 4;
-            text-align: center;
+            grid-area: 1 / 1 / 2 / 2;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 21px;
         }
-        .div2 { grid-area: 1 / 2 / 2 / 3; }
-        .div3 { grid-area: 1 / 4 / 2 / 5; }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .devider {
+            width: 100%;
+            background-color: #f9eb5d;
+        }
+
+        .devider img {
+            padding-top: 1%;
+            padding-bottom: 1%;
+            display: inline; /* the default for span */
+        }
+
+        #informatie {
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+        }
+
+        #informatie h1 {
+            width: 100%;
+            border-bottom: 4px solid #1A5184;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+            font-weight: bold;
+        }
+
+        .devider2 {
+            width: 100%;
+            background-color: #1D5EA7;
+        }
+
+        .devider2 img {
+            padding-top: 1%;
+            padding-bottom: 1%;
+            display: inline; /* the default for span */
+        }
+
+        #contact {
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+        }
+
+        #contact h1 {
+            width: 100%;
+            border-bottom: 4px solid #f9eb5d;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+            font-weight: bold;
+        }
+
     </style>
 
     <div class="hero-image">
         <div class="hero-text">
-{#            <button>Reserveer nu!</button>#}
+            {#            <button>Reserveer nu!</button>#}
         </div>
     </div>
 
+    <div id="overons" class="container">
+        <h1><span>OVERONS</span></h1>
+    </div>
+
     <div class="parent">
-        <div class="div1"><h1>OVER ONS</h1></div>
-        <div class="div2"><hr style="border: #f9eb5d 4px solid"></div>
-        <div class="div3"><hr style="border: #f9eb5d 4px solid"></div>
+        <div class="div1">
+            <p style="width: 80%; text-align: center; padding-left: 20%; margin-top: 22%;">
+                Delfland Night Live is al jaren hét feest in de regio.
+                Midden in de koude maand februari verzorgen we,
+                vanuit de Hexaneo Stam, een warm en spetterend
+                feest.
+            </p>
+            <p style="width: 80%; text-align: center; padding-left: 20%">
+                Delfland Night Live is een scoutingfeest in hart en
+                nieren, dit zie je voornamelijk terug in de prijzen, de
+                muziek en de sfeer.
+            </p>
+            <p style="width: 80%; text-align: center; padding-left: 20%">
+                Aankleding, licht en geluid staan altijd hoog in het
+                vaandel bij de organisatie van Delfland Night Live.
+            </p>
+        </div>
+        <div class="div2">
+            <img style="width: 400px; display: block; margin-left: auto; margin-right: auto; margin-top: 10%;"
+                 src="{{ asset('images/Posters.png') }}">
+        </div>
+    </div>
+
+    <img style="width: 150px; display: block; margin-left: auto; margin-right: auto; margin-top: 5%;"
+         src="{{ asset('images/Teamhexaneo.png') }}">
+
+    <div class="devider">
+        <img style="width: 300px; float: left; margin-left: 5%" src="{{ asset('images/zaal.jpg') }}">
+        <img style="width: 300px; float: right; margin-right: 5%" src="{{ asset('images/zaal.jpg') }}">
+        <img style="width: 300px; display: block; margin-left: auto; margin-right: auto;"
+             src="{{ asset('images/zaal.jpg') }}">
+    </div>
+
+    <div id="informatie" class="container">
+        <h1><span>INFORMATIE</span></h1>
+    </div>
+
+    <div style="text-align: center; margin-top: 5%; width: 50%" class="container">
+        <h3 style="font-weight: bold; color: #1D5EA7">LOCATIE DNL</h3>
+        <p style="font-size: 21px; font-family: 'Roboto', sans-serif; font-weight: bold;">
+            Scouting Impeesa
+            <br>
+            Achterweg 21 Zoetermeer (Achter de P van de Intratuin)
+        </p>
+
+        <h3 style="font-weight: bold; color: #1D5EA7; margin-top: 5%">VOOR WIE?</h3>
+        <p style="font-size: 21px; font-family: 'Roboto', sans-serif; font-weight: bold;">
+            DNL is alleen toegankelijk voor scouts en hun introducees vanaf 16
+            <br>
+            jaar.
+            <br>
+            Bij binnenkomst zal er gevraagd worden om een geldig identiteitsbe-
+            wijs!
+            <br>
+            <br>
+            Zonder geldig identiteitsbewijs geen toegang tot DNL!
+        </p>
+
+        <h3 style="font-weight: bold; color: #1D5EA7; margin-top: 5%">DATUM & TIJDEN</h3>
+        <p style="font-size: 21px; font-family: 'Roboto', sans-serif; font-weight: bold;">
+            Op 22 Februari 2020 zullen wij vanaf 22:00 onze deuren openen,
+            <br>
+            deze zullen de gehele avond open zijn tot het feest afgelopen is!
+        </p>
+    </div>
+
+    <img style="width: 550px; display: block; margin-left: auto; margin-right: auto; margin-top: 5%;" src="{{ asset('images/Geen Alcohol.png') }}">
+
+    <img style="width: 150px; display: block; margin-left: auto; margin-right: auto; margin-top: 5%;"
+         src="{{ asset('images/Teamhexaneo.png') }}">
+
+    <div class="devider2">
+        <img style="width: 300px; float: left; margin-left: 5%" src="{{ asset('images/zaal.jpg') }}">
+        <img style="width: 300px; float: right; margin-right: 5%" src="{{ asset('images/zaal.jpg') }}">
+        <img style="width: 300px; display: block; margin-left: auto; margin-right: auto;"
+             src="{{ asset('images/zaal.jpg') }}">
+    </div>
+
+    <div id="contact" class="container">
+        <h1><span>CONTACT</span></h1>
+    </div>
+
+    <div class="container">
+        <h1 style="font-weight: bold; margin-top: 5%;">Vragen? Opmerkingen? Leuke ideeën? Of andere zaken?</h1>
+        <h2 style="text-align: center">
+            Alles wat je aan ons kwijt wil kun je in onderstaand formulier zetten.
+            <br>
+            We nemen dan zo snel mogelijk contact met je op!
+        </h2>
     </div>
 {% endblock %}
