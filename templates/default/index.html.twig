@@ -132,6 +132,18 @@
             font-weight: bold;
         }
 
+        .input{
+            width: 300px;
+            border: 0;
+            border-bottom: 2px solid black;
+            outline: 0;
+            margin-top: 3%;
+            font-weight: bold;
+        }
+
+        form{
+            margin-bottom: 5%;
+        }
     </style>
 
     <div class="hero-image">
@@ -211,7 +223,8 @@
         </p>
     </div>
 
-    <img style="width: 550px; display: block; margin-left: auto; margin-right: auto; margin-top: 5%;" src="{{ asset('images/Geen Alcohol.png') }}">
+    <img style="width: 550px; display: block; margin-left: auto; margin-right: auto; margin-top: 5%;"
+         src="{{ asset('images/Geen Alcohol.png') }}">
 
     <img style="width: 150px; display: block; margin-left: auto; margin-right: auto; margin-top: 5%;"
          src="{{ asset('images/Teamhexaneo.png') }}">
@@ -228,11 +241,21 @@
     </div>
 
     <div class="container">
-        <h1 style="font-weight: bold; margin-top: 5%;">Vragen? Opmerkingen? Leuke ideeën? Of andere zaken?</h1>
-        <h2 style="text-align: center">
+        <h2 style="font-weight: bold; margin-top: 5%; text-align: center">Vragen? Opmerkingen? Leuke ideeën? Of andere zaken?</h2>
+        <h3 style="text-align: center">
             Alles wat je aan ons kwijt wil kun je in onderstaand formulier zetten.
             <br>
             We nemen dan zo snel mogelijk contact met je op!
-        </h2>
+        </h3>
+
+        <center>
+            <form>
+                <input class="input" type="text" placeholder="Naam"><br>
+                <input class="input" type="text" placeholder="Email"><br>
+                <input class="input" type="text" placeholder="Onderwerp"><br>
+                <textarea style="height: 100px" class="input" placeholder="Inhoud"></textarea><br>
+                <input style="width: 195px; border-radius: 10px; background-color: #F9EB5D; border: #5eb5e0; height: 44px; margin-top: 2%; font-weight: bold" type="submit">
+            </form>
+        </center>
     </div>
 {% endblock %}
