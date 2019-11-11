@@ -16,4 +16,13 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+
+    /**
+     * @Route("/regels", name="regels")
+     */
+    public function regels()
+    {
+        return $this->render('default/regels.html.twig', [
+        ]);
+    }
 }

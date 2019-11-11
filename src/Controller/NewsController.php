@@ -12,6 +12,12 @@ class NewsController extends AbstractController
      */
     public function index()
     {
+        /*
+         * Entity: News
+         * Title
+         * Content
+         */
+
         return $this->render('news/index.html.twig', [
             'controller_name' => 'NewsController',
         ]);
