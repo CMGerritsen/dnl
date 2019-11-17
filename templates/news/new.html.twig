@@ -3,9 +3,11 @@
 {% block title %}News{% endblock %}
 
 {% block body %}
-    <h1>Create News</h1>
+    <div class="container" style="padding-bottom: 10%">
+        <h1>Create News</h1>
 
-    {{ include('news/_form.html.twig') }}
+        {{ include('news/_form.html.twig') }}
 
-    <a href="{{ path('news_index') }}">back to list</a>
+        <a href="{{ path('news_index') }}">back to list</a>
+    </div>
 {% endblock %}

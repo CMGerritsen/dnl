@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <head>
+        <title>Social media</title>
+    </head>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #social {
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+        }
+
+        #social h1 {
+            width: 100%;
+            border-bottom: 4px solid #1A5184;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+            font-weight: bold;
+        }
+
+        h1 span {
+            background: #fff;
+            padding: 0 10px;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 2%;
+        }
+
+        .column {
+            flex: 33.33%;
+            padding: 5px;
+        }
+    </style>
+
+    <div id="social" class="container">
+        <h1><span>SOCIAL MEDIA</span></h1>
+    </div>
+
+    <div class="container" style="margin-top: 5%;">
+        <h2 style="text-align: center; font-weight: bold;">
+            Natuurlijk zijn wij ook te vinden op zowel Facebook als
+            <br>
+            Instagram, om jullie op de hoogte te houden over DNL.
+        </h2>
+
+        <h3 style="text-align: center; font-weight: bold; margin-top: 3%;">
+            Check het hier beneden of ga naar:
+        </h3>
+        <p style="text-align: center; font-size: 30px">
+            https://www.facebook.com/delflandnightlive/
+        </p>
+
+        <h3 style="text-align: center; font-weight: bold; margin-top: 3%;">
+            of volg ons op Instagram:
+        </h3>
+        <p style="text-align: center; font-size: 30px">
+            @delflandnightlive
+        </p>
+    </div>
+<center>
+    <div class="row">
+        <div class="column">
+            <a href="https://www.instagram.com/delflandnightlive/"><img src="{{ asset('images/instagram.png') }}" alt="Facebook" style="width:50%"></a>
+        </div>
+        <div class="column">
+            <a href="https://www.facebook.com/delflandnightlive/"><img src="{{ asset('images/facebook.png') }}" alt="Instagram" style="width:50%"></a>
+        </div>
+    </div>
+</center>
+{% endblock %}

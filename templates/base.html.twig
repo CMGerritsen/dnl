@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
 {#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-    <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -121,9 +120,10 @@
     <!-- Right-aligned links -->
     <div class="topnav-right">
         <a href="{{ path('default') }}">HOME</a>
-        <a href="#">NIEUWS</a>
+        <a href="{{ path('nieuws') }}">NIEUWS</a>
         <a href="{{ path('regels') }}">REGELS</a>
         <a href="/#contact">CONTACT</a>
+        <a style="margin-top: -35px" href="{{ path('social') }}"><img style="width: 65px;" src="{{ asset('images/SOCIAL.png') }}"></a>
     </div>
 </div>
 
