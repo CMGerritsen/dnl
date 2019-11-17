@@ -1,71 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello NewsController!{% endblock %}
+{% block title %}News index{% endblock %}
 
 {% block body %}
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-        }
+    <h1>News index</h1>
 
-        .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ asset('images/Unknown.png') }}");
-            height: 75%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for news in news %}
+            <tr>
+                <td>{{ news.id }}</td>
+                <td>{{ news.title }}</td>
+                <td>{{ news.content }}</td>
+                <td>{{ news.date ? news.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('news_show', {'id': news.id}) }}">show</a>
+                    <a href="{{ path('news_edit', {'id': news.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-        .hero-text {
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-        }
-
-        .hero-text button {
-            border: none;
-            outline: 0;
-            display: inline-block;
-            padding: 10px 25px;
-            color: black;
-            background-color: #ddd;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        #laaste {
-            width: 100%;
-            text-align: center;
-            margin-top: 3%;
-        }
-
-        #laaste h1 {
-            width: 100%;
-            border-bottom: 4px solid #1A5184;
-            line-height: 0.1em;
-            margin: 10px 0 20px;
-            font-weight: bold;
-        }
-
-        h1 span {
-            background: #fff;
-            padding: 0 10px;
-        }
-    </style>
-
-    <div class="hero-image">
-        <div class="hero-text">
-{#            <button>Reserveer nu!</button>#}
-        </div>
-    </div>
-
-    <div id="laaste" class="container">
-        <h1><span>LAASTE NIEUWS</span></h1>
-    </div>
+    <a href="{{ path('news_new') }}">Create new</a>
 {% endblock %}

@@ -121,7 +121,7 @@
     <!-- Right-aligned links -->
     <div class="topnav-right">
         <a href="{{ path('default') }}">HOME</a>
-        <a href="{{ path('nieuws') }}">NIEUWS</a>
+        <a href="#">NIEUWS</a>
         <a href="{{ path('regels') }}">REGELS</a>
         <a href="/#contact">CONTACT</a>
     </div>
@@ -156,6 +156,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script src="{{ asset('bundles/ckeditor/ckeditor.js') }}"></script>
+<script>CKEDITOR.replace('news[content]')</script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>
