@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" style="padding-bottom: 35%">
+        <h2 style="font-weight: bold; margin-top: 5%; text-align: center">Bedankt voor uw vraag / opmerking.</h2>
+    </div>
+
+    <script>
+        setTimeout(function(){
+            window.location.href = '{{ path('default') }}';
+        }, 3000);
+    </script>
+{% endblock %}

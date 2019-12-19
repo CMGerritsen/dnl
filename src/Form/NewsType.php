@@ -16,7 +16,7 @@ class NewsType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('imageFile', VichImageType::class, [
-                'label' => 'Thumbnail'
+                'label' => 'Thumbnail',
             ])
 //            ->add('date')
         ;

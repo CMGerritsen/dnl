@@ -9,13 +9,24 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="default")
+     * @Route("/", name="default", methods={"POST", "GET"})
      */
-    public function index()
+    public function index(\Swift_Mailer $mailer)
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        if (isset($_POST['submit'])) {
+            $message = (new \Swift_Message('Je hebt een vraag / opmerking van ' . $_POST['naam']))
+                ->setFrom($_POST['email'])
+                ->setTo($this->getParameter('mail_parameter'))
+                ->setBody(
+                    $_POST['inhoud'],
+                    'text/plain'
+                );
+            $mailer->send($message);
+
+            return $this->render('default/mailSucces.html.twig');
+        }
+
+        return $this->render('default/index.html.twig');
     }
 
     /**

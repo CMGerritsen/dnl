@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
-
 {% block body %}
+    <head>
+        <title>Delflandnightlive</title>
+    </head>
     <style>
         body, html {
             height: 100%;
@@ -151,7 +152,7 @@
 
     <div class="hero-image">
         <div class="hero-text">
-                        <button>Reserveer nu!</button>
+{#                        <button>Reserveer nu!</button>#}
         </div>
     </div>
 
@@ -252,12 +253,12 @@
         </h3>
 
         <center>
-            <form>
-                <input class="input" type="text" placeholder="Naam"><br>
-                <input class="input" type="text" placeholder="Email"><br>
-                <input class="input" type="text" placeholder="Onderwerp"><br>
-                <textarea style="height: 100px" class="input" placeholder="Inhoud"></textarea><br>
-                <input style="width: 195px; border-radius: 10px; background-color: #F9EB5D; border: #5eb5e0; height: 44px; margin-top: 2%; font-weight: bold" type="submit">
+            <form name="form" action="{{ path('default') }}" method="post">
+                <input name="naam" class="input" type="text" placeholder="Naam"><br>
+                <input name="email" class="input" type="text" placeholder="Email"><br>
+                <input name="onderwerp" class="input" type="text" placeholder="Onderwerp"><br>
+                <textarea name="inhoud" style="height: 100px" class="input" placeholder="Inhoud"></textarea><br>
+                <input name="submit" style="width: 195px; border-radius: 10px; background-color: #F9EB5D; border: #5eb5e0; height: 44px; margin-top: 2%; font-weight: bold" type="submit">
             </form>
         </center>
     </div>

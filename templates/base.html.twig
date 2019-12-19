@@ -162,10 +162,8 @@
 <script src="{{ asset('bundles/ckeditor/ckeditor.js') }}"></script>
 <script>
     CKEDITOR.replace('news[content]', {
-        extraPlugins: 'easyimage',
-        removePlugins: 'image',
-        cloudServices_tokenUrl: '/public/images/easyimage',
-        cloudServices_uploadUrl: '/public/images/easyimage'
+        filebrowserUploadUrl: " ../../public/bundles/ckeditor/ck_upload.php",
+        filebrowserUploadMethod: 'form'
     })
 </script>
 {% block javascripts %}{% endblock %}
